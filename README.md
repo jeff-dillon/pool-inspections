@@ -1,9 +1,9 @@
 # Pool Inspections
 Example Code Louisville Data Analysis Project. Spreadsheet analysis of pool inspection data.
 
-## Overview
+## Demo Overview
 
-The purpose of this demo is to show the data analysis process and concepts using a spreadsheet before jumping into the details of coding in Python. 
+The purpose of this demo is to show the data analysis process and concepts using a spreadsheet before jumping into the details of coding in Python. This demo is broken down into three steps.
 
 At a high level, this demo will show:
 1. How to **describe a data set** including the shape of the data, the types of data in the columns, and what the data in the columns looks like. The purpose of this step is to understand what cleaning will be needed and what questions can be answered.
@@ -11,18 +11,39 @@ At a high level, this demo will show:
 1. How to **analyze and visualize a data set** by grouping and aggregating data and visualizing it in tables and graphs.  
 
 
-## Instructions
+## Demo Instructions
 
-1. Fork the repo and clone your version to your machine.
-1. Download the [Louisville Metro KY - Inspection Results Pools](https://data.louisvilleky.gov/datasets/LOJIC::louisville-metro-ky-inspection-results-pools/about) data and save as a spreadsheet (Either Excel or Google Sheets will work).
-1. When you have completed the exersise, either add your excel to the repo and commit/push it up to GitHub or add a link to your google sheet to the README and commit/push it up to GitHub.
+1. Fork the repo and clone your forked repo to your machine.
+1. Download the [Louisville Metro KY - Inspection Results Pools](https://data.louisvilleky.gov/datasets/LOJIC::louisville-metro-ky-inspection-results-pools/about) 
+data and save as a spreadsheet (Either Excel or Google Sheets will work).
+1. When you have completed the exersise, either add your excel to the repo and commit/push it up to GitHub or add a link 
+to your google sheet to the README and commit/push it up to GitHub.
 1. Share your repoo with your mentors if you would like feedback.
 
 ## Demo 1: Data Discovery
 
-The first step is to describe the data in the dataset. This will inform what data preparation will be needed and what questions you will be able to answer with this dataset.
+The first step in the data analysis process is to describe the data in the dataset. This will help you understand the
+source data and inform what data preparation will be needed and what questions you will be able to answer with this 
+dataset.
 
-1. Change the name of the tab with the data in it to `00_Source`.
+### Overview
+
+In data discovery, we want to do the following:
+
+1. Provide a link to the data source and a description of the data
+1. Describe the shape of the data (# rows and # cols)
+1. Define the columns / fields in the data using a data dictionary (list of columns with the column name, data type,
+description, and cleaning notes). You can read more about types of data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-typesofdata).
+1. Summarize the # of records for each distinct value in the categorical columns.
+1. Summarize the statistics (min, max, mean, median, mode, std. dev.) for each numerical column. 
+1. Document the cleaning needed including what to do with outlier records, what columns will not be needed, etc.
+1. Document the questions you will be able to answer with the data.
+1. Document any new columns that will need to be created based on calculations using existing columns.
+
+
+### Step-by-step instructions: 
+
+1. Open the downloaded spreadsheet and change the name of the tab with the data in it to `00_Source`.
 1. Add a `01_Info` tab to the spreadsheet. We will use this tab to document the dataset. Add a link to the Data Source, a Summary Description of the dataset, and the Data Shape (# cols and rows) to the `01_Info` tab.
 2. Add a Data Dictionary (a list of columns) to the `01_Info` tab including the Name, Type, Description, and Cleaning Notes for each column.
 3. Create a pivot table and chart of the count of records for each distinct value for the following columns on the `01_Info` tab: Zip, City, Subtype, Score. For Example, the City pivot should list the distinct cities in the data with a count of the number of records for each city.
