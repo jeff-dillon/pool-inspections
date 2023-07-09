@@ -20,20 +20,33 @@ data and save as a spreadsheet (Either Excel or Google Sheets will work).
 to your google sheet to the README and commit/push it up to GitHub.
 1. Share your repoo with your mentors if you would like feedback.
 
+## Demo Setup
+
+It is a good idea to have a clean, simple structure for your spreadsheet to make it easier for others to understand your
+analysis.
+
+1. Open the downloaded spreadsheet and change the name of the tab with the data in it to `00_Source`.
+1. Add a `01_Info` tab to the spreadsheet. We will use this tab to document the dataset.
+1. Add a `02_Calc` tab to the spreadsheet. We will use this tab to create calculated fields based on existing fields 
+using formulas.
+5. Add a `03_Clean` tab to the spreadsheet. We will use this tab to store the final clean data for use in analysis.
+1. Add a `04_Analysis` tab to the spreadsheet. We will use this tab to show pivot tables and charts that we will use to 
+answer questions about the dataset.
+
 ## Demo 1: Data Discovery
 
 The first step in the data analysis process is to describe the data in the dataset. This will help you understand the
 source data and inform what data preparation will be needed and what questions you will be able to answer with this 
 dataset.
 
-### Overview
+### Instructions
 
-In data discovery, we want to do the following:
+Document the folliwng in the `01_Info` tab:
 
 1. Provide a link to the data source and a description of the data
 1. Describe the shape of the data (# rows and # cols)
-1. Define the columns / fields in the data using a data dictionary (list of columns with the column name, data type,
-description, and cleaning notes). You can read more about types of data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-typesofdata).
+1. Define the columns / fields in the data using a data dictionary (a table containing the list of columns with the 
+column name, data type, description, and cleaning notes).
 1. Summarize the # of records for each distinct value in the categorical columns.
 1. Summarize the statistics (min, max, mean, median, mode, std. dev.) for each numerical column. 
 1. Document the cleaning needed including what to do with outlier records, what columns will not be needed, etc.
@@ -41,26 +54,24 @@ description, and cleaning notes). You can read more about types of data [here](h
 1. Document any new columns that will need to be created based on calculations using existing columns.
 
 
-### Step-by-step instructions: 
+### Notes: 
 
-1. Open the downloaded spreadsheet and change the name of the tab with the data in it to `00_Source`.
-1. Add a `01_Info` tab to the spreadsheet. We will use this tab to document the dataset. Add a link to the Data Source, a Summary Description of the dataset, and the Data Shape (# cols and rows) to the `01_Info` tab.
-2. Add a Data Dictionary (a list of columns) to the `01_Info` tab including the Name, Type, Description, and Cleaning Notes for each column.
-3. Create a pivot table and chart of the count of records for each distinct value for the following columns on the `01_Info` tab: Zip, City, Subtype, Score. For Example, the City pivot should list the distinct cities in the data with a count of the number of records for each city.
-4. Document the Cleaning Needed in the `01_Info` tab. What records need to be removed from the raw data?
-5. Document the Questions to Answer in the `01_Info` tab. What questions can you answer given the available data?
-6. Document the Features to Create in the `01_Info` tab. What calculated columns will you have to create in order to answer the questions? (opening_year, target_audience, score_trend)
+- You can read more about types of data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-typesofdata).
+- Pivot tables are an easy way to summarize the distinct values in columns. For Example, a pivot table could list the distinct cities in the data with a count of the number of records for each city.
+- You can read abouut the types of issues that need to be addressed when cleaning data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-preparingdata). 
+- Some example questions you could ask of this data include: In which year were most facilities opened? Do facilities 
+targeted at children have higher or lower socres than those targeted at all age groups?
 
         
 ## Demo 2: Data Cleaning
 
 The next step is to prepare the data for analysis. This includes removing invalid records, creating new calulated fields, and renaming columns if needed.
 
-1. Add a `02_Calc` tab to the spreadsheet. Copy the ObjectId column from 01_Source into this tab.
+1. Copy the ObjectId column from 01_Source into this tab.
 2. Add a column to `02_Calc` called `opening_year` and calculate the opening year for each record in the source data as the year portion of the opening_date column. Example: "8/9/2022 0:00:00" should become "2022".
 3. Add a column to `02_Calc` called `target_audience` and calculate the target audience based on the subtype for each record in the source data. "SPLASH PAD" and "WADING POOL" should be "Kid". All Otheres should be "General".
 4. Add a column to `02_Calc` called score_trend and calculate the trend for each record in the source data. If `ScoreREcent` > `Score3` the trend is "Increasing". If `ScoreRecent` < `Score3` the trend is "Decreasing". Otherwise the trend is "Same".
-5. Add a `03_Clean` tab. Copy the data from the Raw Data. Remove the rows as defined in the cleaning. Vlookup the additional columns from `02_Calc`.
+1. Copy the data from the Raw Data. Remove the rows as defined in the cleaning. Vlookup the additional columns from `02_Calc`.
 
 ### Formulas
 
