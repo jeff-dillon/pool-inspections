@@ -7,7 +7,7 @@ The purpose of this demo is to show the data analysis process and concepts using
 
 At a high level, this demo will show:
 1. How to **describe a data set** including the shape of the data, the types of data in the columns, and what the data in the columns looks like. The purpose of this step is to understand what cleaning will be needed and what questions can be answered.
-1. How to **clean the data set** including dealing with missing records and creating new columns based on existing ones.
+1. How to **clean a data set** including dealing with missing records and creating new columns based on existing ones.
 1. How to **analyze and visualize a data set** by grouping and aggregating data and visualizing it in tables and graphs.  
 
 
@@ -26,12 +26,16 @@ It is a good idea to have a clean, simple structure for your spreadsheet to make
 analysis.
 
 1. Open the downloaded spreadsheet and change the name of the tab with the data in it to `00_Source`.
-1. Add a `01_Info` tab to the spreadsheet. We will use this tab to document the dataset.
-1. Add a `02_Calc` tab to the spreadsheet. We will use this tab to create calculated fields based on existing fields 
-using formulas.
-5. Add a `03_Clean` tab to the spreadsheet. We will use this tab to store the final clean data for use in analysis.
-1. Add a `04_Analysis` tab to the spreadsheet. We will use this tab to show pivot tables and charts that we will use to 
-answer questions about the dataset.
+1. Create the rest of the tabs:
+
+| Tab | Description |
+| ----- | ----- |
+| `00_Source` | Source data downloaded from Louisville Metro Open Data. Data in this tab will not be modified. |
+| `01_Info` | We will use this tab to document the dataset. |
+| `02_Calc` | We will use this tab to create calculated fields based on existing fields using formulas. |
+| `03_Clean` | We will use this tab to store the final clean data for use in analysis. |
+| `04_Analysis` | We will use this tab to show pivot tables and charts that we will use to 
+answer questions about the dataset. |
 
 ## Demo 1: Data Discovery
 
@@ -57,11 +61,12 @@ column name, data type, description, and cleaning notes).
 ### Notes: 
 
 - You can read more about types of data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-typesofdata).
-- Pivot tables are an easy way to summarize the distinct values in columns. For Example, a pivot table could list the distinct cities in the data with a count of the number of records for each city.
+- Pivot tables are an easy way to summarize the distinct values in columns. For Example, a pivot table could list the distinct cities in the data with a count of the number of records for each city. You can read more about pivot tables [here](https://support.microsoft.com/en-gb/office/overview-of-pivottables-and-pivotcharts-527c8fa3-02c0-445a-a2db-7794676bce96).
 - You can read abouut calculating descriptive statisticsin a spreadheet using functions [here](https://www.statology.org/descriptive-statistics-google-sheets/). 
 - You can read abouut the types of issues that need to be addressed when cleaning data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-preparingdata).
 - Some example questions you could ask of this data include: In which year were most facilities opened? Do facilities 
-targeted at children have higher or lower socres than those targeted at all age groups?
+targeted at children have higher or lower socres than those targeted at all age groups? Which facilities have improved 
+their scores?
 
         
 ## Demo 2: Data Cleaning
@@ -103,7 +108,10 @@ Here are example Excel/GoogleSheets formulas to calculate the new columns.
 
 ## Demo 3: Data Analysis & Visualization
 
-The last step is to analyze and visualize the data to answer the questions.
+The last step is to analyze and visualize the data to answer the questions identified in the Data Discovery step.
 
-1. Add a `04_Analysis` tab with a pivot table and chart answering each of the questions defined in `00_Discovery`.
-- Example questions: How many facilities have improved their scores? Which facilities are cleaner - Kids facilities or General facilities? etc.
+Add the following anlysis to the `04_Analysis` tab:
+
+1. A pivot table and graph summarizing the number of facilities by year.
+1. A pivot table and graph summarizing the average score by facility target audience.
+1. A pivot table and graph summarizing the number of facilities by score trend.
