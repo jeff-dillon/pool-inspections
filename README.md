@@ -15,10 +15,10 @@ At a high level, this demo will show:
 
 1. Fork the repo and clone your forked repo to your machine.
 1. Download the [Louisville Metro KY - Inspection Results Pools](https://data.louisvilleky.gov/datasets/LOJIC::louisville-metro-ky-inspection-results-pools/about) 
-data and save as a spreadsheet (Either Excel or Google Sheets will work).
-1. When you have completed the exersise, either add your excel to the repo and commit/push it up to GitHub or add a link 
-to your google sheet to the README and commit/push it up to GitHub.
-1. Share your repoo with your mentors if you would like feedback.
+data and save it as a spreadsheet (Either Excel or Google Sheets will work).
+1. When you have completed the exercise, either add your Excel to the repo and commit/push it up to GitHub or add a link 
+to your Google sheet to the README and commit/push it up to GitHub.
+1. Share your repo with your mentors if you would like feedback.
 
 ## Demo Setup
 
@@ -34,8 +34,7 @@ analysis.
 | `01_Info` | We will use this tab to document the dataset. |
 | `02_Calc` | We will use this tab to create calculated fields based on existing fields using formulas. |
 | `03_Clean` | We will use this tab to store the final clean data for use in analysis. |
-| `04_Analysis` | We will use this tab to show pivot tables and charts that we will use to 
-answer questions about the dataset. |
+| `04_Analysis` | We will use this tab to show pivot tables and charts that we will use to answer questions about the dataset. |
 
 ## Demo 1: Data Discovery
 
@@ -45,7 +44,7 @@ dataset.
 
 ### Instructions
 
-Document the folliwng in the `01_Info` tab:
+Document the following in the `01_Info` tab:
 
 1. Provide a link to the data source and a description of the data
 1. Describe the shape of the data (# rows and # cols)
@@ -62,16 +61,16 @@ column name, data type, description, and cleaning notes).
 
 - You can read more about types of data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-typesofdata).
 - Pivot tables are an easy way to summarize the distinct values in columns. For Example, a pivot table could list the distinct cities in the data with a count of the number of records for each city. You can read more about pivot tables [here](https://support.microsoft.com/en-gb/office/overview-of-pivottables-and-pivotcharts-527c8fa3-02c0-445a-a2db-7794676bce96).
-- You can read abouut calculating descriptive statisticsin a spreadheet using functions [here](https://www.statology.org/descriptive-statistics-google-sheets/). 
-- You can read abouut the types of issues that need to be addressed when cleaning data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-preparingdata).
+- You can read about calculating descriptive statistics in a spreadsheet using functions [here](https://www.statology.org/descriptive-statistics-google-sheets/). 
+- You can read about the types of issues that need to be addressed when cleaning data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-preparingdata).
 - Some example questions you could ask of this data include: In which year were most facilities opened? Do facilities 
-targeted at children have higher or lower socres than those targeted at all age groups? Which facilities have improved 
+targeted at children have higher or lower scores than those targeted at all age groups? Which facilities have improved 
 their scores?
 
         
 ## Demo 2: Data Cleaning
 
-The next step in the data analysis process is to clean the data in preparation for analysis. This includes removing invalid records, creating new calulated fields, and renaming columns if needed.
+The next step in the data analysis process is to clean the data in preparation for analysis. This includes removing invalid records, creating new calculated fields, and renaming columns if needed.
 
 ### Instructions
 
@@ -79,15 +78,15 @@ Add the following columns to the `02_Calc` tab:
 
 1. Copy the `ObjectId` column from `01_Source`. We'll use this to "look up" or "join" values from the source data. 
 2. Add a column called `opening_year` and calculate the opening year for each record in the source data as the year portion of the opening_date column. Example: "8/9/2022 0:00:00" should become "2022".
-3. Add a column called `target_audience` and calculate the target audience based on the subtype for each record in the source data. "SPLASH PAD" and "WADING POOL" should be "Kid". All Otheres should be "General".
-4. Add a column called `score_trend` and calculate the trend for each record in the source data. If `ScoreREcent` > `Score3` the trend is "Increasing". If `ScoreRecent` < `Score3` the trend is "Decreasing". Otherwise the trend is "Same".
+3. Add a column called `target_audience` and calculate the target audience based on the subtype for each record in the source data. "SPLASH PAD" and "WADING POOL" should be "Kid". All Others should be "General".
+4. Add a column called `score_trend` and calculate the trend for each record in the source data. If `ScoreREcent` > `Score3` the trend is "Increasing". If `ScoreRecent` < `Score3` the trend is "Decreasing". Otherwise, the trend is "Same".
 
 Combine the Source Data and Calculated Fields in the `03_Clean` tab:
 
 1. Copy all of the data from the Raw Data. 
 1. Remove any rows as defined in the cleaning notes.
-1. Remore any unneeded columns as defined in the cleaning notes.
-1. Lookup the calculated columns from `02_Calc`.
+1. Remove any unneeded columns as defined in the cleaning notes.
+1. "Lookup" the calculated columns from `02_Calc`.
 
 ### Notes
 
