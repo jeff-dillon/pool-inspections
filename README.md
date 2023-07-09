@@ -48,7 +48,7 @@ Document the folliwng in the `01_Info` tab:
 1. Define the columns / fields in the data using a data dictionary (a table containing the list of columns with the 
 column name, data type, description, and cleaning notes).
 1. Summarize the # of records for each distinct value in the categorical columns.
-1. Summarize the statistics (min, max, mean, median, mode, std. dev.) for each numerical column. 
+1. Summarize the descriptive statistics (min, max, mean, median, mode, std. dev.) for each numerical column. 
 1. Document the cleaning needed including what to do with outlier records, what columns will not be needed, etc.
 1. Document the questions you will be able to answer with the data.
 1. Document any new columns that will need to be created based on calculations using existing columns.
@@ -58,20 +58,36 @@ column name, data type, description, and cleaning notes).
 
 - You can read more about types of data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-typesofdata).
 - Pivot tables are an easy way to summarize the distinct values in columns. For Example, a pivot table could list the distinct cities in the data with a count of the number of records for each city.
-- You can read abouut the types of issues that need to be addressed when cleaning data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-preparingdata). 
+- You can read abouut calculating descriptive statisticsin a spreadheet using functions [here](https://www.statology.org/descriptive-statistics-google-sheets/). 
+- You can read abouut the types of issues that need to be addressed when cleaning data [here](https://www.pluralsight.com/guides/data-literacy-essentials:-representing-processing-and-preparing-data#module-preparingdata).
 - Some example questions you could ask of this data include: In which year were most facilities opened? Do facilities 
 targeted at children have higher or lower socres than those targeted at all age groups?
 
         
 ## Demo 2: Data Cleaning
 
-The next step is to prepare the data for analysis. This includes removing invalid records, creating new calulated fields, and renaming columns if needed.
+The next step in the data analysis process is to clean the data in preparation for analysis. This includes removing invalid records, creating new calulated fields, and renaming columns if needed.
 
-1. Copy the ObjectId column from 01_Source into this tab.
-2. Add a column to `02_Calc` called `opening_year` and calculate the opening year for each record in the source data as the year portion of the opening_date column. Example: "8/9/2022 0:00:00" should become "2022".
-3. Add a column to `02_Calc` called `target_audience` and calculate the target audience based on the subtype for each record in the source data. "SPLASH PAD" and "WADING POOL" should be "Kid". All Otheres should be "General".
-4. Add a column to `02_Calc` called score_trend and calculate the trend for each record in the source data. If `ScoreREcent` > `Score3` the trend is "Increasing". If `ScoreRecent` < `Score3` the trend is "Decreasing". Otherwise the trend is "Same".
-1. Copy the data from the Raw Data. Remove the rows as defined in the cleaning. Vlookup the additional columns from `02_Calc`.
+### Instructions
+
+Add the following columns to the `02_Calc` tab:
+
+1. Copy the `ObjectId` column from `01_Source`. We'll use this to "look up" or "join" values from the source data. 
+2. Add a column called `opening_year` and calculate the opening year for each record in the source data as the year portion of the opening_date column. Example: "8/9/2022 0:00:00" should become "2022".
+3. Add a column called `target_audience` and calculate the target audience based on the subtype for each record in the source data. "SPLASH PAD" and "WADING POOL" should be "Kid". All Otheres should be "General".
+4. Add a column called `score_trend` and calculate the trend for each record in the source data. If `ScoreREcent` > `Score3` the trend is "Increasing". If `ScoreRecent` < `Score3` the trend is "Decreasing". Otherwise the trend is "Same".
+
+Combine the Source Data and Calculated Fields in the `03_Clean` tab:
+
+1. Copy all of the data from the Raw Data. 
+1. Remove any rows as defined in the cleaning notes.
+1. Remore any unneeded columns as defined in the cleaning notes.
+1. Lookup the calculated columns from `02_Calc`.
+
+### Notes
+
+- You can read about lookups in Google Sheets [here](https://spreadsheetpoint.com/how-to-use-lookup-in-google-sheets/)
+or in Excel [here](https://support.microsoft.com/en-au/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929).
 
 ### Formulas
 
